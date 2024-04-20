@@ -1,0 +1,126 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 65536 bytes. Error detail: Failed to commit metaspace.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (virtualSpaceNode.cpp:112), pid=18104, tid=15120
+#
+# JRE version: OpenJDK Runtime Environment (22.0.1+8) (build 22.0.1+8-16)
+# Java VM: OpenJDK 64-Bit Server VM (22.0.1+8-16, mixed mode, emulated-client, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:TieredStopAtLevel=1 -Dspring.output.ansi.enabled=always -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2022.2\lib\idea_rt.jar=50653:C:\Program Files\JetBrains\IntelliJ IDEA 2022.2\bin -Dfile.encoding=UTF-8 spring.course.Main
+
+Host: Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz, 8 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.3636)
+Time: Sat Apr 20 19:05:46 2024 Central European Daylight Time elapsed time: 1.187118 seconds (0d 0h 0m 1s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002c7204413a0):  JavaThread "main"             [_thread_in_vm, id=15120, stack(0x000000ccfec00000,0x000000ccfed00000) (1024K)]
+
+Stack: [0x000000ccfec00000,0x000000ccfed00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6e2279]  (no source info available)
+V  [jvm.dll+0x874e33]  (no source info available)
+V  [jvm.dll+0x87725e]  (no source info available)
+V  [jvm.dll+0x877933]  (no source info available)
+V  [jvm.dll+0x27fd76]  (no source info available)
+V  [jvm.dll+0x870a7e]  (no source info available)
+V  [jvm.dll+0x6852e5]  (no source info available)
+V  [jvm.dll+0x1e3eac]  (no source info available)
+V  [jvm.dll+0x1e3c7e]  (no source info available)
+V  [jvm.dll+0x687c38]  (no source info available)
+V  [jvm.dll+0x2250ac]  (no source info available)
+V  [jvm.dll+0x685cfe]  (no source info available)
+V  [jvm.dll+0x3c376f]  (no source info available)
+V  [jvm.dll+0x20d3cb]  (no source info available)
+V  [jvm.dll+0x5c4659]  (no source info available)
+V  [jvm.dll+0x7ec076]  (no source info available)
+V  [jvm.dll+0x47ca36]  (no source info available)
+V  [jvm.dll+0x4828e8]  (no source info available)
+C  [java.dll+0x17e4]  (no source info available)
+C  0x000002c72a58dc8c  (no source info available)
+
+The last pc belongs to native nmethod (printed below).
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 1406  java.lang.ClassLoader.defineClass1(Ljava/lang/ClassLoader;Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class; java.base@22.0.1 (0 bytes) @ 0x000002c72a58dbf1 [0x000002c72a58db20+0x00000000000000d1]
+J 1495 c1 java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class; java.base@22.0.1 (43 bytes) @ 0x000002c72a5b1104 [0x000002c72a5b0fe0+0x0000000000000124]
+J 1407 c1 jdk.internal.loader.BuiltinClassLoader.defineClass(Ljava/lang/String;Ljdk/internal/loader/Resource;)Ljava/lang/Class; java.base@22.0.1 (121 bytes) @ 0x000002c72a5917a4 [0x000002c72a591240+0x0000000000000564]
+J 1405 c1 jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(Ljava/lang/String;)Ljava/lang/Class; java.base@22.0.1 (64 bytes) @ 0x000002c72a58e534 [0x000002c72a58e260+0x00000000000002d4]
+J 1166 c1 jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(Ljava/lang/String;Z)Ljava/lang/Class; java.base@22.0.1 (143 bytes) @ 0x000002c72a523aec [0x000002c72a5236e0+0x000000000000040c]
+J 1314 c1 jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; java.base@22.0.1 (40 bytes) @ 0x000002c72a56900c [0x000002c72a568fc0+0x000000000000004c]
+J 1313 c1 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; java.base@22.0.1 (7 bytes) @ 0x000002c72a5688f4 [0x000002c72a5688a0+0x0000000000000054]
+v  ~StubRoutines::call_stub 0x000002c72a0b100d
+J 1406  java.lang.ClassLoader.defineClass1(Ljava/lang/ClassLoader;Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class; java.base@22.0.1 (0 bytes) @ 0x000002c72a58dbf1 [0x000002c72a58db20+0x00000000000000d1]
+J 1495 c1 java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class; java.base@22.0.1 (43 bytes) @ 0x000002c72a5b1104 [0x000002c72a5b0fe0+0x0000000000000124]
+J 1407 c1 jdk.internal.loader.BuiltinClassLoader.defineClass(Ljava/lang/String;Ljdk/internal/loader/Resource;)Ljava/lang/Class; java.base@22.0.1 (121 bytes) @ 0x000002c72a5917a4 [0x000002c72a591240+0x0000000000000564]
+J 1405 c1 jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(Ljava/lang/String;)Ljava/lang/Class; java.base@22.0.1 (64 bytes) @ 0x000002c72a58e534 [0x000002c72a58e260+0x00000000000002d4]
+J 1166 c1 jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(Ljava/lang/String;Z)Ljava/lang/Class; java.base@22.0.1 (143 bytes) @ 0x000002c72a523aec [0x000002c72a5236e0+0x000000000000040c]
+J 1314 c1 jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; java.base@22.0.1 (40 bytes) @ 0x000002c72a56900c [0x000002c72a568fc0+0x000000000000004c]
+J 1313 c1 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; java.base@22.0.1 (7 bytes) @ 0x000002c72a5688f4 [0x000002c72a5688a0+0x0000000000000054]
+v  ~StubRoutines::call_stub 0x000002c72a0b100d
+J 1196  java.lang.Class.forName0(Ljava/lang/String;ZLjava/lang/ClassLoader;Ljava/lang/Class;)Ljava/lang/Class; java.base@22.0.1 (0 bytes) @ 0x000002c72a5301bf [0x000002c72a530120+0x000000000000009f]
+J 1199 c1 java.lang.Class.forName(Ljava/lang/String;ZLjava/lang/ClassLoader;Ljava/lang/Class;)Ljava/lang/Class; java.base@22.0.1 (41 bytes) @ 0x000002c72a530ac4 [0x000002c72a530aa0+0x0000000000000024]
+J 2612 c1 org.springframework.util.ClassUtils.forName(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/Class; (251 bytes) @ 0x000002c72a770794 [0x000002c72a7704c0+0x00000000000002d4]
+j  org.springframework.util.ClassUtils.isPresent(Ljava/lang/String;Ljava/lang/ClassLoader;)Z+2
+j  org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperties.allPresent(Ljava/lang/ClassLoader;Ljava/lang/String;[Ljava/lang/String;)Z+2
+j  org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperties.lookup(Ljava/lang/ClassLoader;Ljava/lang/Class;Lorg/springframework/boot/jdbc/DataSourceBuilder$MappedDataSourceProperties;Ljava/lang/String;Ljava/util/function/Supplier;[Ljava/lang/String;)Lorg/springframework/boot/jdbc/DataSourceBuilder$MappedDataSourceProperties;+8
+j  org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperties.lookupPooled(Ljava/lang/ClassLoader;Ljava/lang/Class;)Lorg/springframework/boot/jdbc/DataSourceBuilder$MappedDataSourceProperties;+16
+j  org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperties.forType(Ljava/lang/ClassLoader;Ljava/lang/Class;)Lorg/springframework/boot/jdbc/DataSourceBuilder$MappedDataSourceProperties;+2
+j  org.springframework.boot.jdbc.DataSourceBuilder.findType(Ljava/lang/ClassLoader;)Ljava/lang/Class;+2
+j  org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceAvailableCondition.getMatchOutcome(Lorg/springframework/context/annotation/ConditionContext;Lorg/springframework/core/type/AnnotatedTypeMetadata;)Lorg/springframework/boot/autoconfigure/condition/ConditionOutcome;+16
+j  org.springframework.boot.autoconfigure.condition.AbstractNestedCondition$MemberOutcomes.getConditionOutcome(Lorg/springframework/core/type/AnnotationMetadata;Lorg/springframework/context/annotation/Condition;)Lorg/springframework/boot/autoconfigure/condition/ConditionOutcome;+18
+j  org.springframework.boot.autoconfigure.condition.AbstractNestedCondition$MemberOutcomes.<init>(Lorg/springframework/context/annotation/ConditionContext;Lorg/springframework/core/type/AnnotationMetadata;Ljava/util/List;)V+69
+j  org.springframework.boot.autoconfigure.condition.AbstractNestedCondition$MemberConditions.lambda$getMatchOutcomes$0(Ljava/util/List;Lorg/springframework/core/type/AnnotationMetadata;Ljava/util/List;)V+11
+j  org.springframework.boot.autoconfigure.condition.AbstractNestedCondition$MemberConditions$$Lambda+0x000002c7372cee68.accept(Ljava/lang/Object;Ljava/lang/Object;)V+16
+J 2524 c1 java.util.LinkedHashMap.forEach(Ljava/util/function/BiConsumer;)V java.base@22.0.1 (65 bytes) @ 0x000002c72a747afc [0x000002c72a747a60+0x000000000000009c]
+j  org.springframework.util.MultiValueMapAdapter.forEach(Ljava/util/function/BiConsumer;)V+5
+j  java.util.Collections$UnmodifiableMap.forEach(Ljava/util/function/BiConsumer;)V+5 java.base@22.0.1
+j  org.springframework.boot.autoconfigure.condition.AbstractNestedCondition$MemberConditions.getMatchOutcomes()Ljava/util/List;+19
+j  org.springframework.boot.autoconfigure.condition.AbstractNestedCondition$MemberMatchOutcomes.<init>(Lorg/springframework/boot/autoconfigure/condition/AbstractNestedCondition$MemberConditions;)V+6
+j  org.springframework.boot.autoconfigure.condition.AbstractNestedCondition.getMatchOutcome(Lorg/springframework/context/annotation/ConditionContext;Lorg/springframework/core/type/AnnotatedTypeMetadata;)Lorg/springframework/boot/autoconfigure/condition/ConditionOutcome;+29
+j  org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(Lorg/springframework/context/annotation/ConditionContext;Lorg/springframework/core/type/AnnotatedTypeMetadata;)Z+8
+j  org.springframework.context.annotation.ConditionEvaluator.shouldSkip(Lorg/springframework/core/type/AnnotatedTypeMetadata;Lorg/springframework/context/annotation/ConfigurationCondition$ConfigurationPhase;)Z+241
+j  org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(Lorg/springframework/context/annotation/ConfigurationClass;Ljava/util/function/Predicate;)V+11
+j  org.springframework.context.annotation.ConfigurationClassParser.processMemberClasses(Lorg/springframework/context/annotation/ConfigurationClass;Lorg/springframework/context/annotation/ConfigurationClassParser$SourceClass;Ljava/util/function/Predicate;)V+199
+j  org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(Lorg/springframework/context/annotation/ConfigurationClass;Lorg/springframework/context/annotation/ConfigurationClassParser$SourceClass;Ljava/util/function/Predicate;)Lorg/springframework/context/annotation/ConfigurationClassParser$SourceClass;+22
+j  org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(Lorg/springframework/context/annotation/ConfigurationClass;Ljava/util/function/Predicate;)V+109
+j  org.springframework.context.annotation.ConfigurationClassParser.processImports(Lorg/springframework/context/annotation/ConfigurationClass;Lorg/springframework/context/annotation/ConfigurationClassParser$SourceClass;Ljava/util/Collection;Ljava/util/function/Predicate;Z)V+304
+j  org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorGroupingHandler.lambda$processGroupImports$1(Ljava/util/function/Predicate;Lorg/springframework/context/annotation/DeferredImportSelector$Group$Entry;)V+48
+j  org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorGroupingHandler$$Lambda+0x000002c7372c08a8.accept(Ljava/lang/Object;)V+12
+j  java.lang.Iterable.forEach(Ljava/util/function/Consumer;)V+30 java.base@22.0.1
+j  org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorGroupingHandler.processGroupImports()V+50
+j  org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorHandler.process()V+53
+j  org.springframework.context.annotation.ConfigurationClassParser.parse(Ljava/util/Set;)V+158
+j  org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(Lorg/springframework/beans/factory/support/BeanDefinitionRegistry;)V+301
+j  org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(Lorg/springframework/beans/factory/support/BeanDefinitionRegistry;)V+81
+j  org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(Ljava/util/Collection;Lorg/springframework/beans/factory/support/BeanDefinitionRegistry;Lorg/springframework/core/metrics/ApplicationStartup;)V+59
+j  org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(Lorg/springframework/beans/factory/config/ConfigurableListableBeanFactory;Ljava/util/List;)V+238
+j  org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(Lorg/springframework/beans/factory/config/ConfigurableListableBeanFactory;)V+5
+j  org.springframework.context.support.AbstractApplicationContext.refresh()V+62
+j  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh()V+1
+j  org.springframework.boot.SpringApplication.refresh(Lorg/springframework/context/ConfigurableApplicationContext;)V+1
+j  org.springframework.boot.SpringApplication.refreshContext(Lorg/springframework/context/ConfigurableApplicationContext;)V+16
+j  org.springframework.boot.SpringApplication.run([Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;+110
+j  org.springframework.boot.SpringApplication.run([Ljava/lang/Class;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;+9
+j  org.springframework.boot.SpringApplication.run(Ljava/lang/Class;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;+9
+j  spring.course.Main.main([Ljava/lang/String;)V+3
+v  ~StubRoutines::call_stub 0x000002c72a0b100d
