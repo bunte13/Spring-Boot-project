@@ -2,7 +2,7 @@ package spring.course.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties
+@JsonIgnoreProperties //ignore all the properties that were not added as fields
 public class TimeApiResponse {
     private String utc_datetime;
 

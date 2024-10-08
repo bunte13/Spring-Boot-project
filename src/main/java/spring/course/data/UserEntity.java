@@ -4,8 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
 
+ //ova se koristi za da ispratime data do databaza i da dobieme nazad data
+ //slicno na userModel ama treba da implementira serializeable interface
+ // zmacjo trena da bide vo istiot format kakod atabazata shto kje gi rpima
 
-@Entity
+@Entity //ova ni kazhuva deka ovaa klasa treba da bide matchnata so tabela vo databazata
 public class UserEntity implements Serializable {
 
     @Id
